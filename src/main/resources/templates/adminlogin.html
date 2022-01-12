@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Valampuri Restaurant</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Links-->
+    <link type="text/css" rel="stylesheet" th:href="@{/css/index.css}">
+
+
+</head>
+<body>
+<body>
+<section class="firstSection">
+    <nav>
+        <a href="/home"><img th:src="@{/img/logo.PNG}" alt="Logo"></a>
+        <a href="/home">Order Now</a>
+        <a href="/adminlogin">Admin</a>
+        <a href="#secondSection" class="signUp">Sign up</a>
+    </nav>
+    <div class="rightNav">
+        <h3>Valampuri Restaurant</h3>
+        <h2>Admin-Login</h2>
+
+        <form action="#" th:action="@{/adminlogin}" th:object="${user}" method="post">
+            <input type="text" th:field="*{username}" name="username" placeholder="Username" />
+            <input type="password" th:field="*{password}" name="password" placeholder=" Password" />
+            <input type="submit" value="Login">
+
+
+
+        </form>
+
+
+
+</section>
+</body>
+</html>
