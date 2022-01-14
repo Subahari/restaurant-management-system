@@ -10,7 +10,7 @@ import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 
 @Entity
-@Table(name = "menus")
+@Table(name = "menu")
 public class Menu {
 	
 	@Id

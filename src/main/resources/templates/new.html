@@ -41,7 +41,7 @@
                     <label class="form-label" >Calories</label>
                     <td>
                         <input type="hidden" th:field="*{id}" />
-                        <input type="text" th:field="*{calories}" class="form-control" placeholder="calories" />
+                        <input type="text" th:field="*{calories}" class="form-control" placeholder="calories"  required/>
                     </td>
                 </tr>
             </div>
@@ -50,19 +50,19 @@
 
                 <tr>
                     <label class="form-label" >Name</label>
-                    <td><input type="text" th:field="*{name}" class="form-control" placeholder="name" /></td>
+                    <td><input type="text" th:field="*{name}" class="form-control" placeholder="name" required/></td>
                 </tr>
             </div>
             <div alight="left">
                 <tr>
                     <label class="form-label" >Price</label>
-                    <td><input type="text" th:field="*{price}" class="form-control" placeholder="price" /></td>
+                    <td><input type="text" th:field="*{price}" class="form-control" placeholder="price" required/></td>
                 </tr>
             </div>
             <div alight="left">
                 <tr>
                     <label class="form-label" >Image</label>
-                    <td><input type="file" th:field="*{img_location}" class="form-control" placeholder="price" /></td>
+                    <td><input type="file" th:field="*{img_location}" class="form-control" placeholder="image" required/></td>
                 </tr>
             </div>
             <div alight="left">
@@ -71,7 +71,7 @@
                     <td>
                         
 
-                        <select name="cars" th:field="*{type}" class="form-control" placeholder="---Select Type of the food--">
+                        <select name="cars" th:field="*{type}" class="form-control" placeholder="---Select Type of the food--" required>
 
                             <option value="Breakfast">Breakfast</option>
                             <option value="Lunch">Lunch</option>
@@ -81,7 +81,7 @@
             </div>
             <br>
             <tr>
-                <td colspan="2"><button type="submit" class="btn btn-info">Insert</button> </td>
+                <td colspan="2"><button type="submit" class="btn btn-success">Insert</button> </td>
             </tr>
             </table>
         </form>

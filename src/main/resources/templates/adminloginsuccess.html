@@ -9,21 +9,26 @@
     <link type="text/css" rel="stylesheet" th:href="@{/css/index.css}">
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
     <link href="static/css/style.css" rel="stylesheet">
+    <style>
+        img {
+            border-radius: 50%;
+        }
+    </style>
 </head>
 
 <body>
 <section class="firstSection">
     <nav>
-        <a href="/home"><img th:src="@{/img/logo.PNG}" alt="Logo"></a>
+        <a href="/home"><img th:src="@{/img/logo.PNG}" alt="Logo" style="border-radius: 50%"></a>
         <a href="/new">Add Menu</a>
         <a href="/menuadd">View Menu</a>
 
         <a href="/logout" class="signUp">Log out</a>
     </nav>
-
-
-
-
+    <div class="rightNav">
+        <h3>Hello  <b>admin!!!</b> </h3>
+        <h2>Welcome to Valampuri</h2>
+    </div>
 </section>
 
 
