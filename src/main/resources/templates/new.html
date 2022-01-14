@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Order Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/customerPage.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+
+</head>
+
+<body>
+<nav>
+    <a href="/home"  id="userImg"><img th:src="@{/img/logo.PNG}" alt="Logo"></a>
+    <a href="/new">Add Menu</a>
+    <a href="/menuadd">View Menu</a>
+
+
+
+</nav>
+
+<div class="welcomeCustomer">
+
+    <form method="get" action="#" th:action="@{/logout}">
+
+        <input type="submit" value="Logout">
+
+    </form>
+</div>
+<div align="center">
+    <h1>Insert New Menu</h1>
+    <br />
+    <div class="col-sm-4">
+        <form action="#" th:action="@{/save}" th:object="${student}" method="post">
+
+
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Calories</label>
+                    <td>
+                        <input type="hidden" th:field="*{id}" />
+                        <input type="text" th:field="*{calories}" class="form-control" placeholder="calories" />
+                    </td>
+                </tr>
+            </div>
+
+            <div alight="left">
+
+                <tr>
+                    <label class="form-label" >Name</label>
+                    <td><input type="text" th:field="*{name}" class="form-control" placeholder="name" /></td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Price</label>
+                    <td><input type="text" th:field="*{price}" class="form-control" placeholder="price" /></td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Image</label>
+                    <td><input type="file" th:field="*{img_location}" class="form-control" placeholder="price" /></td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Type</label>
+                    <td>
+                        
+
+                        <select name="cars" th:field="*{type}" class="form-control" placeholder="---Select Type of the food--">
+
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                        </select></td>
+                </tr>
+            </div>
+            <br>
+            <tr>
+                <td colspan="2"><button type="submit" class="btn btn-info">Insert</button> </td>
+            </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Order Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/customerPage.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+
+</head>
+
+<body>
+<nav>
+    <a href="/home"  id="userImg"><img th:src="@{/img/logo.PNG}" alt="Logo"></a>
+    <a href="/new">Add Menu</a>
+    <a href="/menuadd">View Menu</a>
+
+
+
+</nav>
+
+<div class="welcomeCustomer">
+
+    <form method="get" action="#" th:action="@{/logout}">
+
+        <input type="submit" value="Logout">
+
+    </form>
+</div>
+<div>
+    <h2 >Details of Menus</h2>
+    <tr>
+        <div align = "left" >
+            <h3><a  th:href="@{'/new'}">Add new Menu</a></h3>
+        </div>
+    </tr>
+    <tr>
+        <div class="col-md-8 offset-md-3" align = "center">
+            <div  align = "center" >
+                <table class ="table table-success table-striped" style="border:1px solid mediumseagreen;margin-left:auto;margin-right:auto;" >
+                    <thead class="table-success">
+                    <tr>
+                        <th>ID</th>
+                        <th>Calories</th>
+                        <th>name</th>
+                        <th>Image</th>
+                        <th>price</th>
+                        <th>Type</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  th:each="menus : ${liststudent }">
+                        <td th:text="${menus.id}">ID</td>
+                        <td th:text="${menus.calories}">Calories</td>
+                        <td th:text="${menus.name}">Name</td>
+                        <td th:text="${menus.img_location}">Name</td>
+                        <td th:text="${menus.price}">Price</td>
+                        <td th:text="${menus.type}">Type</td>
+                        <td>
+                            <a th:href="@{'/edit/' + ${menus.id}}" >Edit</a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/delete/' + ${menus.id}}" class="fas fa-trash-alt">Delete</a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </tr>
+
+    </tbody>
+    </table>
+    <div>
+</body>
+</html>
