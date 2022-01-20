@@ -1,6 +1,6 @@
 package com.restaurant.management.controller;
 
-import com.restaurant.management.Logindomain.Student;
+import com.restaurant.management.Logindomain.Amenu;
 import com.restaurant.management.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,13 +11,13 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-public class StudentController {
+public class MenusController {
     @Autowired
     private StudentService service;
 
     @GetMapping("/menuadd")
     public String viewHomePage(Model model) {
-        List<Student> liststudent = service.listAll();
+        List<Amenu> liststudent = service.listAll();
         model.addAttribute("liststudent", liststudent);
 
         return "menuadd";
@@ -25,12 +25,12 @@ public class StudentController {
 
     @GetMapping("/new")
     public String add(Model model) {
-        model.addAttribute("student", new Student());
+        model.addAttribute("student", new Amenu());
         return "new";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveStudent(@ModelAttribute("student") Student std) {
+    public String saveStudent(@ModelAttribute("student") Amenu std) {
         service.save(std);
         return "redirect:/menuadd";
     }
@@ -38,7 +38,7 @@ public class StudentController {
     @RequestMapping("/edit/{id}")
     public ModelAndView showEditStudentPage(@PathVariable(name = "id") int id) {
         ModelAndView mav = new ModelAndView("new");
-        Student std = service.get(id);
+        Amenu std = service.get(id);
         mav.addObject("student", std);
         return mav;
 

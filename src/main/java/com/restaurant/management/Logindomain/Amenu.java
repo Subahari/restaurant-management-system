@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "menus")
-public class Student {
+public class Amenu {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
@@ -14,7 +14,7 @@ public class Student {
     private String type;
     private  String img_location;
 
-    public Student(String img_location) {
+    public Amenu(String img_location) {
         this.img_location = img_location;
     }
 
@@ -26,11 +26,11 @@ public class Student {
         this.img_location = img_location;
     }
 
-    public Student() {
+    public Amenu() {
 
     }
 
-    public Student(Long id, int calories, String name, double price, String type) {
+    public Amenu(Long id, int calories, String name, double price, String type) {
         this.id = id;
         this.calories = calories;
         this.name = name;
