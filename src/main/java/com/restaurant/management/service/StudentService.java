@@ -4,22 +4,22 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.restaurant.management.Logindomain.Student;
-import com.restaurant.management.repository.StudentRepository;
+import com.restaurant.management.Logindomain.Amenu;
+import com.restaurant.management.repository.AmenuRepository;
 
 @Service
 public class StudentService {
     @Autowired
-    private StudentRepository repo;
-    public List<Student> listAll() {
+    private AmenuRepository repo;
+    public List<Amenu> listAll() {
         return repo.findAll();
     }
 
-    public void save(Student std) {
+    public void save(Amenu std) {
         repo.save(std);
     }
 
-    public Student get(long id) {
+    public Amenu get(long id) {
         return repo.findById(id).get();
     }
 
